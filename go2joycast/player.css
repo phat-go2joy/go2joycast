@@ -56,12 +56,12 @@ body {
 
 /*Phat comment this to hide logo*/
 .player .logo {
-  display: none;
+/*  display: none;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
   position: absolute;
-/*  bottom: 50%;
+  bottom: 50%;
   left: 50%;
   background-image: url("assets/logo.png");
   margin-bottom: -96px;
@@ -69,13 +69,19 @@ body {
   width: 192px;
   height: 192px;*/
 
-  bottom: 20%;
-  left: 20%;
-  background-image: url("assets/logo.png");
-  margin-bottom: -10px;
-  margin-left: -10px;
-  width: 350px;
-  height: 350px;
+
+  background-image: url("assets/background2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f1f1f1;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 300;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .player .placeholder-image {
@@ -262,16 +268,11 @@ body {
   background-position: bottom;
   background-repeat: no-repeat;
   align-self: flex-end;
-  /*height: 143px;
+  height: 143px;
   margin-right: 32px;
   min-width: 96px;
   max-width: 266px;
-  width: 100%;*/
-
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0; 
+  width: 100%;*
 }
 
 .player .preview-mode-info .preview-mode-text {
