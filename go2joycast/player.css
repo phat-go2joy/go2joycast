@@ -68,20 +68,6 @@ body {
   margin-left: -96px;
   width: 192px;
   height: 192px;
-
-
-/*  background-image: url("assets/background2.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #f1f1f1;
-  font-family: 'Open Sans',sans-serif;
-  font-weight: 300;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;*/
 }
 
 .player .placeholder-image {
