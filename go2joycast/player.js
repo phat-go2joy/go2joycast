@@ -834,20 +834,6 @@ sampleplayer.CastPlayer.prototype.loadVideo_ = function(info) {
         'mediaElement': this.mediaElement_
       });
       host.onError = loadErrorCallback;
-      host.updateManifestRequestInfo = function(requestInfo) {
-        if (!requestInfo.url) {
-          requestInfo.url = this.url;
-        }
-        requestInfo.withCredentials = true;
-      };
-      host.updateSegmentRequestInfo = function(requestInfo) {
-        // example of setting CORS withCredentials
-        requestInfo.withCredentials = true;
-        // example of setting headers
-        requestInfo.headers = {
-          'origin': ['*']
-        };
-      };
       this.player_ = new cast.player.api.Player(host);
       this.player_.load(protocolFunc(host));
     } else {
