@@ -598,16 +598,6 @@ sampleplayer.CastPlayer.prototype.preloadVideo_ = function(mediaInformation) {
     self.displayPreviewMode_ = false;
     self.log_('Error during preload');
   };
-  host.updateManifestRequestInfo = function(requestInfo) {
-    if (!requestInfo.url) {
-      requestInfo.url = this.url;
-    }
-    requestInfo.withCredentials = true;
-  };
-  host.updateSegmentRequestInfo = function(requestInfo) {
-    requestInfo.withCredentials = true;
-    requestInfo.headers = {};
-  };
   self.preloadPlayer_ = new cast.player.api.Player(host);
   self.preloadPlayer_.preload(protocolFunc(host));
   return true;
@@ -844,16 +834,6 @@ sampleplayer.CastPlayer.prototype.loadVideo_ = function(info) {
         'mediaElement': this.mediaElement_
       });
       host.onError = loadErrorCallback;
-      host.updateManifestRequestInfo = function(requestInfo) {
-        if (!requestInfo.url) {
-          requestInfo.url = this.url;
-        }
-        requestInfo.withCredentials = true;
-      };
-      host.updateSegmentRequestInfo = function(requestInfo) {
-        requestInfo.withCredentials = true;
-        requestInfo.headers = {};
-      };
       this.player_ = new cast.player.api.Player(host);
       this.player_.load(protocolFunc(host));
     } else {
