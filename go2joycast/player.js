@@ -606,13 +606,7 @@ sampleplayer.CastPlayer.prototype.preloadVideo_ = function(mediaInformation) {
   };
   host.updateSegmentRequestInfo = function(requestInfo) {
     requestInfo.withCredentials = true;
-    requestInfo.headers = {
-      "origin": ["*"],
-      "responseHeader": ["Content-Type"],
-      "method": ["GET", "HEAD"],
-      "maxAgeSeconds": 86400
-    };
-    //requestInfo.headers['content-type'] = 'text/xml;charset=utf-8';
+    requestInfo.headers = {};
   };
   self.preloadPlayer_ = new cast.player.api.Player(host);
   self.preloadPlayer_.preload(protocolFunc(host));
@@ -859,10 +853,6 @@ sampleplayer.CastPlayer.prototype.loadVideo_ = function(info) {
       host.updateSegmentRequestInfo = function(requestInfo) {
         requestInfo.withCredentials = true;
         requestInfo.headers = {};
-        requestInfo.headers['origin'] = info.message.media.customData.origin;
-        requestInfo.headers['content-type'] = info.message.media.contentType;
-        requestInfo.headers['accept-encoding'] = 'gzip';
-        //requestInfo.headers['content-type'] = 'text/xml;charset=utf-8';
       };
       this.player_ = new cast.player.api.Player(host);
       this.player_.load(protocolFunc(host));
